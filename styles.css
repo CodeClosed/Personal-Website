@@ -9,7 +9,259 @@
     top: 0;
   }
 }
+/* ===========================
+  Responsive Design
+  =========================== */
 
+/* Remove about image and adjust about__content for smaller screens */
+@media (max-width: 900px) {
+  .about__image {
+    display: none;
+  }
+  .about__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin: 40px 10px;
+    padding: 24px 10px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+  }
+
+  .about__title{
+    margin-top: -56px;
+  }
+  /* Stack contact form below contact info on iPad size */
+  .contact__container {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .contact__info,
+  .contact__form form {
+    width: 100%;
+    max-width: 600px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* Decrease space between About Me heading and content */
+  .about__title {
+    margin-bottom: 12px;
+    margin-top: -56px;
+  }
+}
+
+/* Center landing-content on iPadOS 14 size (width: 834px, height: 1194px) */
+@media (width: 834px) and (height: 1194px) {
+  .landing-content {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .about__content {
+    margin: 20px 2vw;
+    padding: 10px 2vw;
+    width: 100%;
+    max-width: 98vw;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar__container,
+  .footer__container {
+    max-width: 1000px;
+    padding: 0 16px;
+  }
+  .about__content {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 32px 16px;
+  }
+  .navbar__brand {
+    margin-right: 32px;
+  }
+  .about__image {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar__container {
+    padding: 0 10px;
+  }
+  .about__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin: 40px 10px;
+    padding: 24px 10px;
+  }
+  .about__image {
+    display: none;
+  }
+  .landing-content {
+    margin-left: 30px;
+    width: 90vw;
+    padding: 20px;
+  }
+  .skills {
+    gap: 24px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .card {
+    width: 160px;
+    margin: 10px;
+  }
+  .contact__info,
+  .contact__form form {
+    width: 90vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 16px;
+  }
+  .navbar__brand {
+    margin-right: 20px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .navbar__links {
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+  }
+  .landing-content {
+    margin-top: 80px;
+    margin-left: 10px;
+    width: 98vw;
+    padding: 10px;
+  }
+  .about__content {
+    margin: 20px 2vw;
+    padding: 10px 2vw;
+  }
+  .about__image {
+    width: 140px;
+    height: 180px;
+  }
+  .skills {
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+  }
+  .card {
+    width: 90vw;
+    min-width: 180px;
+    margin: 8px 0;
+  }
+  .education__item {
+    max-width: 95vw;
+    padding: 16px 8px;
+  }
+  .contact__container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact__info,
+  .contact__form form {
+    width: 98vw;
+    margin: 0;
+    padding: 10px;
+  }
+  .footer__container {
+    padding: 0 4px;
+  }
+  .navbar__brand {
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    height: auto;
+    padding: 6px 0;
+  }
+  .navbar__brand {
+    font-size: 0.95rem;
+    margin-right: 4px;
+  }
+  .navbar__links {
+    gap: 6px;
+    font-size: 0.8rem;
+  }
+  .landing-content h1 {
+    font-size: 2rem;
+  }
+  .about__title,
+  .education__title,
+  .skill__title,
+  .contact__info h2 {
+    font-size: 1.2rem;
+  }
+  .footer {
+    padding: 10px 0;
+  }
+  .footer__nav {
+    gap: 8px;
+    font-size: 0.9rem;
+  }
+  .footer__description {
+    font-size: 12px;
+  }
+  .footer__copyright {
+    font-size: 11px;
+  }
+}
+:root {
+  /* Primary Brand Colors */
+  --color-primary: #0099cc;
+  --color-primary-light: #33c6dd;
+  --color-primary-alpha: #0099ccbe;
+  --color-primary-shadow: #0099cc80;
+  --color-primary-border: #0099cccd;
+
+  /* Black Colors */
+  --color-black: #000000;
+  /* Cyberpunk Modern Edgy Theme Colors */
+  --color-bg-black: #0a0f14;
+  --color-bg-dark: #16181d;
+  --color-bg-navbar: #0a0f14f2;
+  --color-bg-section: #181c23;
+  --color-bg-footer: #0a0f14;
+
+  --color-primary: #00fff7;
+  --color-primary-light: #00e0ff;
+  --color-primary-alpha: #00fff799;
+  --color-primary-shadow: #00fff733;
+  --color-primary-border: #00fff7cc;
+
+  --color-accent: #ff00ea;
+  --color-accent-light: #39ff14;
+
+  --color-black: #000;
+  --color-black-light: #23272f;
+  --color-black-alpha: #00000080;
+
+  --color-text-main: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-text-muted: #39ff14;
+
+  --color-selection-bg: #00fff7;
+  --color-selection-text: #0a0f14;
+
+  --color-form-focus: #ff00ea;
+}
 
 /* ===========================
   Base Styles
@@ -17,13 +269,13 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(0, 0, 0);
-  color: aliceblue;
+  background-color: var(--color-bg-black);
+  color: var(--color-text-secondary);
   font-family: Arial, Helvetica, sans-serif;
 }
 ::selection {
-  background-color: rgb(255, 204, 0);
-  color: #000000;
+  background-color: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }
 
 /* ===========================
@@ -35,7 +287,7 @@ body {
   left: 0;
   z-index: 9999;
   width: 100%;
-  background: rgba(20, 20, 30, 0.2);
+  background: var(--color-bg-navbar);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   height: 64px;
   display: flex;
@@ -57,7 +309,7 @@ body {
 .navbar__brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #e7a409;
+  color: var(--color-primary);
   letter-spacing: 2px;
   margin-right: 48px;
   
@@ -81,31 +333,31 @@ body {
 
 .navbar__links li a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-text-main);
   padding: 10px;
   border-radius: 8px;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .navbar__links li a:hover {
-  background-color: #e7a409;
-  color: #181818;
+  background-color: var(--color-primary);
+  color: var(--color-bg-dark);
   border-radius: 10px;
 }
 
 .navbar__links li a:active{
-  background-color: #e7a409be;
+  background-color: var(--color-primary-alpha);
 }
 
 /* --- Site Title Link --- */
 #site-title li a {
   cursor: pointer;
   text-decoration: none;
-  color: #e7a409;
+  color: var(--color-primary);
 }
 
 #site-title li a:hover {
-  color: #e7a409a7;
+  color: var(--color-primary-light);
 }
 
 /* ===========================
@@ -134,7 +386,7 @@ body {
 
 .landing-content h1 {
   font-size: 50px;
-  color: #e7a409;
+  color: var(--color-primary);
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -145,8 +397,8 @@ body {
 
 .landing-content button {
   background: transparent;
-  color: #e7a409;
-  border: 2px solid #e7a409;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
   border-radius: 24px;
   font-family: inherit;
   font-weight: 600;
@@ -159,9 +411,9 @@ body {
 }
 
 .landing-content button:hover {
-  background: #e7a409;
-  color: #181818;
-  border-color: #e7a409;
+  background: var(--color-primary);
+  color: var(--color-bg-dark);
+  border-color: var(--color-primary);
 }
 /* ===========================
   About Section Styles
@@ -182,9 +434,9 @@ body {
   padding: 48px 48px;
   margin: 70px 200px auto 200px;
   border-radius: 0 18px 18px 18px;
-  border: 5px solid #e7a409;
+  border: 5px solid var(--color-primary);
   border-width: 5px 10px 10px 5px;
-  background: rgba(29, 12, 7, 0.85);
+  background: var(--color-bg-section);
 }
 
 .about__image {
@@ -197,7 +449,7 @@ body {
 
 .about__title {
   font-size: 2rem;
-  color: #e7a409;
+  color: var(--color-primary);
   margin-bottom: 24px;
   margin-top: 10px;
   font-weight: bold;
@@ -206,8 +458,8 @@ body {
 }
 
 .btn {
-  background: #e7a409;
-  color: #181818;
+  background: var(--color-primary);
+  color: var(--color-bg-dark);
   border: none;
   border-radius: 20px;
   font-family: inherit;
@@ -217,14 +469,14 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s,transform 0.2s;
   margin: 10px 10px 10px 10px;
-  box-shadow: 0 2px 8px rgba(231, 164, 9, 0.15);
+  box-shadow: 0 2px 8px var(--color-primary-shadow);
 }
 
 .btn:hover {
-  background: rgba(29, 12, 7, 0.85);
-  color: #e7a409;
+  background: var(--color-bg-section);
+  color: var(--color-primary);
   box-shadow: 0 2px 8px rgba(231, 164, 9, 0.25);
-  border: 2px solid #e7a409;
+  border: 2px solid var(--color-primary);
   transform: translateX(-5px) translateY(-5px);
 }
 
@@ -242,52 +494,52 @@ body {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 40px;
-  color: #e7a409;
+  color: var(--color-primary);
 }
 .education__item {
-  background-color: rgba(29, 12, 7, 0.85);
+  background-color: var(--color-bg-section);
   border-radius: 18px;
   margin: 0 auto 32px auto;
   max-width: 600px;
   padding: 32px 28px 24px 28px;
   text-align: left;
-  border: #e7a409 solid 5px;
-  box-shadow: 5px 5px #e7a409;
+  border: var(--color-primary) solid 5px;
+  box-shadow: 5px 5px var(--color-primary);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .education__item:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 10px 10px 20px#e7a40980;
+  box-shadow: 10px 10px 20px var(--color-primary-shadow);
 }
 
 .education__degree {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #e7a409;
+  color: var(--color-primary);
   margin-bottom: 8px;
 }
 .education__institute {
   font-size: 1.1rem;
-  color: #e7a409cd;
+  color: var(--color-primary-border);
   margin-bottom: 4px;
   font-weight: 500;
 }
 .education__years {
   font-size: 1rem;
-  color: #9a8c98;
+  color: var(--color-text-muted);
   margin-bottom: 12px;
   font-weight: 400;
 }
 .education__description {
   font-size: 1rem;
-  color: #ffffff;
+  color: var(--color-text-main);
   margin-bottom: 14px;
   line-height: 1.6;
 }
 .education__cgpa {
   font-size: 1.05rem;
-  color: #e7a409;
+  color: var(--color-primary);
   font-weight: 600;
   margin-top: 8px;
 }
@@ -322,7 +574,7 @@ body {
 }
 .skill__title {
   font-size: 2rem;
-  color: #e7a409;
+  color: var(--color-primary);
   font-weight: bold;
   letter-spacing: 1px;
   text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
@@ -332,20 +584,20 @@ body {
   display: flex;
   flex-direction: column;
   width: 200px;
-  border: 2px  solid #e7a409;
+  border: 2px  solid var(--color-primary);
   border-width: 0px 8px 8px 0px;
   margin: 20px;
   padding: 0px;
   border-radius: 0px 18px 18px 18px;
-  background-color: rgba(29, 12, 7, 0.85);
+  background-color: var(--color-bg-section);
   transition: scale 1s, box-shadow 1s, transform 1s;
-  color: #e7a409;
+  color: var(--color-primary);
   align-items: center;
 }
 
 .card:hover {
   scale: 1.05;
-  box-shadow: 10px 10px 20px #e7a40980;
+  box-shadow: 10px 10px 20px var(--color-primary-shadow);
   transform: translateX(-5px) translateY(-10px);
 }
 
@@ -354,7 +606,7 @@ body {
   height: 150px;
   object-fit: cover;
   border-radius: 0px 10px 0px 0px;
-  border-bottom: #e7a409 5px solid;
+  border-bottom: var(--color-primary) 5px solid;
 }
 
 /* ===========================
@@ -382,20 +634,20 @@ body {
   border-radius: 24px;
   padding: 30px;
   width: 620px;
-  border: 2px solid #e7a409;
-  background: rgba(29, 12, 7, 0.85);
+  border: 2px solid var(--color-primary);
+  background: var(--color-bg-section);
   height: fit-content;
   border-width: 5px 10px 10px 5px;
 }
 
 .contact__label {
-  color: #e7a409;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
 .contact__info h2 {
   font-size: 2rem;
-  color: #e7a409;
+  color: var(--color-primary);
   margin-bottom: 24px;
   margin-top: 0;
   font-weight: bold;
@@ -416,11 +668,11 @@ body {
   margin-left: 60px;
   margin-right: 60px;
   gap: 16px;
-  background: rgba(29, 12, 7, 0.85);
+  background: var(--color-bg-section);
   padding: 30px 30px 30px 30px;
   border-radius: 24px;
   width: 420px;
-  border: 2px solid #e7a409;
+  border: 2px solid var(--color-primary);
   transition: box-shadow 0.3s;
   height: fit-content;
   border-width: 5px 10px 10px 5px;
@@ -432,10 +684,10 @@ body {
 
 .contact__form form input,
 .contact__form form textarea {
-  border: #e7a409 solid 2px;
+  border: var(--color-primary) solid 2px;
   background-color: transparent;
   border-radius: 15px;
-  color: #ffffff;
+  color: var(--color-text-main);
   padding-left: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -445,13 +697,13 @@ body {
 .contact__form form input[type="email"]:focus,
 .contact__form form textarea:focus {
   outline: none;
-  border: 2px solid #ff5733;
-  box-shadow: 0 0 5px #ff5733;
+  border: 2px solid var(--color-form-focus);
+  box-shadow: 0 0 5px var(--color-form-focus);
 }
 
 .contact__form form button {
-  background: #e7a409;
-  color: #181818;
+  background: var(--color-primary);
+  color: var(--color-bg-dark);
   border: none;
   border-radius: 20px;
   font-family: inherit;
@@ -462,21 +714,21 @@ body {
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   margin-top: 8px;
   margin-bottom: 8px;
-  box-shadow: 0 2px 8px rgba(231, 164, 9, 0.15);
+  box-shadow: 0 2px 8px var(--color-primary-shadow);
 }
 
 .contact__form form button:hover {
-  background: #181818;
-  color: #e7a409;
+  background: var(--color-bg-dark);
+  color: var(--color-primary);
   box-shadow: 0 4px 16px rgba(231, 164, 9, 0.25);
-  border: 2px solid #e7a409;
+  border: 2px solid var(--color-primary);
 }
 /* ===========================
   Footer Styles
   =========================== */
 .footer {
-  background-color: #f5af0ad1;
-  color: white;
+  background-color: var(--color-bg-footer);
+  color: var(--color-text-main);
   padding: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -498,7 +750,7 @@ body {
 .author_name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--color-text-main);
   letter-spacing: 1px;
   text-align: center;
   margin-bottom: 40px;
@@ -515,7 +767,7 @@ body {
 }
 
 .footer__nav a {
-  color: white;
+  color: var(--color-text-main);
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 1px;
@@ -554,6 +806,9 @@ body {
 
 .footer__socials img:hover {
   transform: scale(1.2);
+  filter: brightness(0) saturate(100%) sepia(1) hue-rotate(270deg) brightness(1.2);
+  /* Use accent color from root as a drop-shadow for color effect */
+  filter: drop-shadow(0 0 6px var(--color-selection-bg));
 }
 
 /* --- Footer Copyright --- */
