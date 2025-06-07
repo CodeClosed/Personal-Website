@@ -10,6 +10,20 @@
   }
 }
 
+@keyframes pop-up {
+  from{
+    opacity: 0;
+    scale: 0.5;
+  } 
+  to{
+    overflow: 1;
+    scale: 1;
+  }
+}
+html{
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Primary Brand Colors */
   --color-primary: #0099cc;
@@ -54,6 +68,25 @@ body {
   color: var(--color-text-secondary);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.scroll-watcher {
+height: 10px;
+position: fixed;
+top: 0;
+z-index: 1000;
+background: linear-gradient(90deg, var(--color-primary),var(--color-primary-light) ,var(--color-selection-bg));
+filter: drop-shadow();
+width: 100%;
+scale: 0 1;
+transform-origin: left;
+animation: scroll-watcher linear;
+animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+to { scale: 1 1; }
+}
+
 ::selection {
   background-color: var(--color-selection-bg);
   color: var(--color-selection-text);
@@ -68,13 +101,16 @@ body {
   left: 0;
   z-index: 9999;
   width: 100%;
-  background: var(--color-bg-navbar);
-  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.2);
   height: 4rem;
   display: flex;
   align-items: center;
+  transition: backdrop-filter 0.4 ease-in-out, box-shadow 0.4 ease-in-out;
 }
 
+.navbar.scrolled{
+  box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(30px);
+}
 .navbar__container {
   display: flex;
   justify-content: space-between;
@@ -164,6 +200,7 @@ body {
   font-family: "Times New Roman", Times, serif;
   padding: 1.875rem;
   width: min(34.375rem, 90vw);
+
 }
 
 .landing-content h1 {
@@ -225,7 +262,9 @@ body {
   box-shadow: 0 0.25rem 1.5rem var(--color-primary-shadow);
   padding: 2.5rem 2rem;
   margin: 6.25rem auto;
-  flex-wrap: wrap;
+  animation: pop-up linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 45%;  
 }
 
 .about__image {
@@ -258,7 +297,7 @@ body {
 }
 
 .btn {
-  background: var(--color-primary);
+  background: var(--color-primary-light);
   color: var(--color-bg-dark);
   border: none;
   border-radius: 1.25rem;
@@ -269,7 +308,7 @@ body {
   cursor: pointer;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
   margin: 0.625rem 0.625rem 0.625rem 0;
-  box-shadow: 0 0.125rem 0.5rem var(--color-primary-shadow);
+  box-shadow: 0 0.125rem 0.5rem var(--color-selection-bg);
 }
 
 .btn:hover {
@@ -298,56 +337,96 @@ body {
   margin-bottom: 2.5rem;
   color: var(--color-primary);
 }
-.education__item {
-  background-color: var(--color-bg-section);
-  border-radius: 1.125rem;
-  margin: 0 auto 2rem auto;
-  max-width: 37.5rem;
-  padding: 2rem 1.75rem 1.5rem 1.75rem;
-  text-align: left;
-  border: var(--color-primary) solid 0.3125rem;
-  box-shadow: 0.3125rem 0.3125rem var(--color-primary);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
 
-.education__item:hover {
-  transform: translateY(-0.5rem) scale(1.03);
-  box-shadow: 0.625rem 0.625rem 1.25rem var(--color-primary-shadow);
-}
-
-.education__degree {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-.education__institute {
-  font-size: 1.1rem;
-  color: var(--color-primary-border);
-  margin-bottom: 0.25rem;
-  font-weight: 500;
-}
-.education__years {
-  font-size: 1rem;
-  color: var(--color-text-muted);
-  margin-bottom: 0.75rem;
-  font-weight: 400;
-}
-.education__description {
-  font-size: 1rem;
+.education-card {
+  position: relative;
+  display: flex;
+  background: var(--color-bg-section);
+  border-radius: 1.5rem;
+  margin: 2rem auto;
+  max-width: 42rem;
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--color-primary-shadow);
+  backdrop-filter: blur(10px);
   color: var(--color-text-main);
-  margin-bottom: 0.875rem;
-  line-height: 1.6;
+  border: 5px solid;
+  border-color: var(--color-primary);  
+
+  animation: fadeSlideIn 1.5s ease both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
-.education__cgpa {
-  font-size: 1.05rem;
-  color: var(--color-primary);
+
+.education-card__accent {
+  width: 0.4rem;
+  background: linear-gradient(180deg, var(--color-selection-bg), var(--color-primary-alpha));
+  border-radius: 1rem;
+  margin-right: 1.5rem;
+}
+
+.education-card__content {
+  flex: 1;
+}
+
+.education-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.education-card__degree {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-selection-bg);
+  margin: 0;
+}
+
+.education-card__cgpa {
+  background: var(--color-accent);
+  color: var(--color-text-main);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.education-card__institute {
+  font-size: 1rem;
   font-weight: 600;
-  margin-top: 0.5rem;
+  color: var(--color-primary-light);
+  margin: 0.25rem 0;
 }
-.education__title {
-  font-size: 2rem;
+
+.education-card__years {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.8rem;
 }
+
+.education-card__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: justify;
+}
+
+/* Entry animation */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 /* ===========================
   Skill Section Styles
   =========================== */
@@ -362,13 +441,15 @@ body {
 }
 
 .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3.125rem;
-  margin-left: 3.125rem;
-  margin-right: 3.125rem;
-  align-items: center;
-  justify-content: center;
+    margin: 0 0;
+    padding: 20px 0;
+    max-width: 1000px;
+    overflow: hidden;
+    display: flex;
+    flex: 0 0 100%;
+    &:hover .group {
+      animation-play-state: paused;
+    }
 }
 .skill-name {
   margin-left: 4.375rem;
@@ -381,6 +462,23 @@ body {
   letter-spacing: 0.0625rem;
   text-shadow: 0.0625rem 0.0625rem 0.5rem rgba(0, 0, 0, 0.2);
 }
+ .group {
+    display: flex;
+    gap: 0px;
+    /* Add padding to the right to create a gap between the last and first card. */
+    padding-right: 0px;
+    will-change: transform; /* We should be nice to the browser - let it know what we're going to animate. */
+    animation: scrolling 10s linear infinite;
+  }
+
+    @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 
 .card {
   display: flex;
@@ -463,7 +561,8 @@ body {
 .contact__form {
   height: fit-content;
   display: flex;
-  margin-top: 2.5rem;
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
 }
 
 .contact__form form {

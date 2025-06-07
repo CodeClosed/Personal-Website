@@ -11,8 +11,10 @@
 </head>
 
 <body>
+  <script src="script.js"></script>
   <!-- Header/Navbar Section -->
   <header class="navbar">
+    <div class="scroll-watcher"></div>
     <nav class="navbar__container">
       <ul class="navbar__brand" id="site-title">
         <li>
@@ -88,53 +90,59 @@
     <section id="education" class="education">
       <h2 class="education__title">Education</h2>
 
-      <div class="education__item" id="btech-1">
-        <h3 class="education__degree">Btech Computer Science (AI/ML)</h3>
-        <h4 class="education__institute">
-          Vellore Institute of Technology (Vellore)
-        </h4>
-        <h4 class="education__years">2024-28</h4>
-        <h5 class="education__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit rem voluptas quod dolore praesentium corporis!
-          Blanditiis veritatis accusantium assumenda asperiores, corrupti
-          molestias repellendus, natus sed vero officia dolorum laboriosam
-          eveniet!
-        </h5>
-        <h4 class="education__cgpa">CGPA : 9.1</h4>
+      <div class="education-card">
+        <div class="education-card__accent"></div>
+        <div class="education-card__content">
+          <div class="education-card__header">
+            <h3 class="education-card__degree">B.Tech Computer Science (AI/ML)</h3>
+            <span class="education-card__cgpa">CGPA: 9.1</span>
+          </div>
+          <h4 class="education-card__institute">Vellore Institute of Technology (Vellore)</h4>
+          <h5 class="education-card__years">2024 – 2028</h5>
+          <p class="education-card__description">
+            Passionate about building intelligent systems, I studied algorithms, machine learning, and real-world AI
+            projects.
+            Developed hands-on models and collaborated on open-source tech.
+          </p>
+        </div>
       </div>
 
-      <div class="education__item" id="btech-2">
-        <h3 class="education__degree">Btech Computer Science (AI/ML)</h3>
-        <h4 class="education__institute">
-          Vellore Institute of Technology (Vellore)
-        </h4>
-        <h4 class="education__years">2024-28</h4>
-        <h5 class="education__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit rem voluptas quod dolore praesentium corporis!
-          Blanditiis veritatis accusantium assumenda asperiores, corrupti
-          molestias repellendus, natus sed vero officia dolorum laboriosam
-          eveniet!
-        </h5>
-        <h4 class="education__cgpa">CGPA : 9.1</h4>
+
+      <div class="education-card">
+        <div class="education-card__accent"></div>
+        <div class="education-card__content">
+          <div class="education-card__header">
+            <h3 class="education-card__degree">B.Tech Computer Science (AI/ML)</h3>
+            <span class="education-card__cgpa">CGPA: 9.1</span>
+          </div>
+          <h4 class="education-card__institute">Vellore Institute of Technology (Vellore)</h4>
+          <h5 class="education-card__years">2024 – 2028</h5>
+          <p class="education-card__description">
+            Passionate about building intelligent systems, I studied algorithms, machine learning, and real-world AI
+            projects.
+            Developed hands-on models and collaborated on open-source tech.
+          </p>
+        </div>
       </div>
 
-      <div class="education__item" id="btech-3">
-        <h3 class="education__degree">Btech Computer Science (AI/ML)</h3>
-        <h4 class="education__institute">
-          Vellore Institute of Technology (Vellore)
-        </h4>
-        <h4 class="education__years">2024-28</h4>
-        <h5 class="education__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit rem voluptas quod dolore praesentium corporis!
-          Blanditiis veritatis accusantium assumenda asperiores, corrupti
-          molestias repellendus, natus sed vero officia dolorum laboriosam
-          eveniet!
-        </h5>
-        <h4 class="education__cgpa">CGPA : 9.1</h4>
+
+      <div class="education-card">
+        <div class="education-card__accent"></div>
+        <div class="education-card__content">
+          <div class="education-card__header">
+            <h3 class="education-card__degree">B.Tech Computer Science (AI/ML)</h3>
+            <span class="education-card__cgpa">CGPA: 9.1</span>
+          </div>
+          <h4 class="education-card__institute">Vellore Institute of Technology (Vellore)</h4>
+          <h5 class="education-card__years">2024 – 2028</h5>
+          <p class="education-card__description">
+            Passionate about building intelligent systems, I studied algorithms, machine learning, and real-world AI
+            projects.
+            Developed hands-on models and collaborated on open-source tech.
+          </p>
+        </div>
       </div>
+
     </section>
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
@@ -142,44 +150,89 @@
         <h2 class="skill__title">Skills</h2>
       </div>
       <div class="skills">
+        <div class="group">
+          <div class="card">
+            <img src="asset/python.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">Python</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="asset/wordpress.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">Word Press</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="asset/html.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">HTML</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="asset/css.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">CSS</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="asset/c.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">C</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="asset/cpp.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">C++</h2>
+            </div>
+          </div>
 
-        <div class="card">
-          <img src="asset/python.png" class="card-image">
-          <div class="card-content">
-            <h2 class="card-title">Python</h2>
-          </div>
+
+
+
+
         </div>
-        <div class="card">
-          <img src="asset/wordpress.png" class="card-image">
-          <div class="card-content">
-            <h2 class="card-title">Word Press</h2>
+
+        <div aria-hidden class="group">
+          <div class="card">
+            <img src="asset/python.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">Python</h2>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="asset/html.png" class="card-image">
-          <div class="card-content">
-            <h2 class="card-title">HTML</h2>
+          <div class="card">
+            <img src="asset/wordpress.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">Word Press</h2>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="asset/css.png" class="card-image">
-          <div class="card-content">
-            <h2 class="card-title">CSS</h2>
+          <div class="card">
+            <img src="asset/html.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">HTML</h2>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="asset/c.png" class="card-image">
-          <div class="card-content">
-            <h2 class="card-title">C</h2>
+          <div class="card">
+            <img src="asset/css.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">CSS</h2>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <img src="asset/cpp.png" class="card-image">
-          <div class="card-content">
-            <h2 class="card-title">C++</h2>
+          <div class="card">
+            <img src="asset/c.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">C</h2>
+            </div>
           </div>
+          <div class="card">
+            <img src="asset/cpp.png" class="card-image">
+            <div class="card-content">
+              <h2 class="card-title">C++</h2>
+            </div>
+          </div>
+
         </div>
-      </div>
     </section>
 
     <!-- Contact Section -->
@@ -256,4 +309,5 @@
     </div>
   </footer>
 </body>
+
 </html>
